@@ -11,6 +11,7 @@ from PyQt5.QtCore import (
     QSize,
     QPoint,
     QTimer,
+    QTime,
 )
 
 from PyQt5.QtWidgets import (
@@ -124,7 +125,14 @@ class MainWindow(QtWidgets.QMainWindow):
             self.readTemp.setText("<pre>" + str(int(data.lastval('temp'))) + "°C / " + str(int(data.lastval('temp') * 1.8 + 32)) + "°F</pre>")
             self.Wattage.setText("<pre>{:5.3f} W</pre>".format(power))
             self.readTime.setText("<pre>" + data.lastval('time').strftime("%H:%M:%S") + "</pre>")
-
+            # print("TIMER:"+data.lastval('set_timer').strftime("%H:%M:%S")+" Type:" +str(type(data.lastval('set_timer'))))
+            # Hour and minutes are not correct assigned in data.lastval('set_timer') Hour = Minute, Minute = second. Fix it here.
+            if not self.set_timer.hasFocus():
+                ReadHours=int(data.lastval('set_timer').seconds / 3600)
+                # (All Seconds - Hours in seconds) / 60
+                ReadMinutes=int((data.lastval('set_timer').seconds - (ReadHours*3600)) /60)
+                # print("TYPE:" +  str(type(data.lastval('set_timer')))+ " ATTR:" + str(dir(data.lastval('set_timer'))) + "HOURS:" + str(ReadHours) +  " MINUTES:" +str(ReadMinutes) )                
+                self.set_timer.setTime(QTime(ReadHours,ReadMinutes,0))
             xlim = (time(0), max([time(0, 1, 0), data.lastval('time')]))
             # clear axes
             self.ax.cla()

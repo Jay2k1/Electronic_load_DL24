@@ -166,6 +166,13 @@
                  <height>0</height>
                 </size>
                </property>
+               <property name="maximumTime">
+                <time>
+                 <hour>18</hour>
+                 <minute>12</minute>
+                 <second>00</second>
+                </time>
+               </property>               
                <property name="currentSection">
                 <enum>QDateTimeEdit::HourSection</enum>
                </property>
@@ -335,7 +342,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid #0000fa; background:#0000fa;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid #0000fa; background:#0000fa;</string>-->
+                <string notr="true">border-radius:0.4em;color: #f8f37e;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;0.000 V&lt;/pre&gt;</string>
@@ -398,7 +406,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid #fa0000; background:#fa0000;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid #fa0000; background:#fa0000;</string>-->
+                <string notr="true">border-radius:0.4em;color:#96ff79;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;0.000 A&lt;/pre&gt;</string>
@@ -454,7 +463,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid #008000; background:#008000;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid #008000; background:#008000;</string>-->
+                <string notr="true">border-radius:0.4em;color: #c32c26; border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;0.000 W&lt;/pre&gt;</string>
@@ -518,7 +528,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid #808080; background:#808080;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid #808080; background:#808080;</string>-->
+                <string notr="true">border-radius:0.4em;color:#eeeeee;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;00°C / 00°F&lt;/pre&gt;</string>
@@ -544,7 +555,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>-->
+                <string notr="true">border-radius:0.4em;color:#1ea0e3;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;0.000 Ah&lt;/pre&gt;</string>
@@ -577,7 +589,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>-->
+                <string notr="true">border-radius:0.4em;color:#5b2ae8;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;0.000 Wh&lt;/pre&gt;</string>
@@ -596,7 +609,8 @@
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>
+                <!--<string notr="true">border-radius:0.4em;border:1px solid; background:#000;</string>-->
+                <string notr="true">border-radius:0.4em;color: #6aa69b;border:1px solid #000; background:#000;</string>
                </property>
                <property name="text">
                 <string>&lt;pre&gt;00:00:00&lt;/pre&gt;</string>

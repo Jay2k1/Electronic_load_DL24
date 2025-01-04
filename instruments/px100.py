@@ -4,7 +4,7 @@ written by Mikhail Doronin
 licensed as GPLv3
 """
 
-from datetime import time
+from datetime import time,timedelta
 from math import modf
 from numbers import Number
 from time import sleep
@@ -108,7 +108,7 @@ class PX100(Instrument):
             'temp': 0,
             'set_current': 0.,
             'set_voltage': 0.,
-            'set_timer': time(0),
+            'set_timer': timedelta(0),
         }
 
     def probe(self):
@@ -179,11 +179,22 @@ class PX100(Instrument):
         except:
             mult = 1000.
 
-        if (command == PX100.TIME or command == PX100.TIMER):
+        if (command == PX100.TIME):
+            # hh = ret[2]
+            # mm = ret[3]
+            # ss = ret[4]
+            print("Command: "+str(command))
             hh = ret[2]
             mm = ret[3]
             ss = ret[4]
             return time(hh, mm, ss)  #'{:02d}:{:02d}:{:02d}'.format(hh, mm, ss)
+        elif (command == PX100.TIMER):
+            print("Command: "+str(command))
+            # hh = int(ret[2] / 60)
+            # mm = ret[2] % 60
+            # ss = ret[3]
+            # DL24 returns only Minutes and hours for the Timer => better datatype = timedelta
+            return timedelta(hours=ret[2], minutes=ret[3])
         else:
             return int.from_bytes(ret[2:5], byteorder='big') / mult
 
