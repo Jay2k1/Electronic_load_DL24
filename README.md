@@ -2,7 +2,17 @@
 
 Python software for the Atorch DL24 electronic load.
 
-This project was forked from https://github.com/misdoro/Electronic_load_px100.
+This project was forked from https://github.com/misdoro/Electronic_load_px100 and https://github.com/Jay2k1/Electronic_load_DL24.
+
+## Note: This is a fork for my own use cases/adjustments because [source project](https://github.com/Jay2k1/Electronic_load_DL24) has some limitations to me:
+- Foreground and backgroundcolors of capacity and time measures are black on linux therefore could not be reed.
+- Timer max is 9:59:59
+- Read the timer when it is greater then 23h throws a segmentation fault (Fix ValueError: hour must be in 0..23 in px100.py)
+
+### Changes in this fork
+- Colors of the measures are set to the colors of the DL24 display
+- Timer Bug fixed
+- Set timer max time to 18h 12 min (max int seconds)
 
 # Binary protocol
 
