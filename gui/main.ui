@@ -166,6 +166,13 @@
                  <height>0</height>
                 </size>
                </property>
+               <property name="maximumTime">
+                <time>
+                 <hour>18</hour>
+                 <minute>12</minute>
+                 <second>00</second>
+                </time>
+               </property>               
                <property name="currentSection">
                 <enum>QDateTimeEdit::HourSection</enum>
                </property>
