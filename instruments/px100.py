@@ -190,10 +190,10 @@ class PX100(Instrument):
             return time(hh, mm, ss)  #'{:02d}:{:02d}:{:02d}'.format(hh, mm, ss)
         elif (command == PX100.TIMER):
             print("Command: "+str(command))
-            hh = int(ret[2] / 60)
-            mm = ret[2] % 60
-            ss = ret[3]
-            # DL24 returns only Minutes and hours for the Timer
+            # hh = int(ret[2] / 60)
+            # mm = ret[2] % 60
+            # ss = ret[3]
+            # DL24 returns only Minutes and hours for the Timer => better datatype = timedelta
             return timedelta(hours=ret[2], minutes=ret[3])
         else:
             return int.from_bytes(ret[2:5], byteorder='big') / mult

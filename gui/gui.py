@@ -131,7 +131,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 ReadHours=int(data.lastval('set_timer').seconds / 3600)
                 # (All Seconds - Hours in seconds) / 60
                 ReadMinutes=int((data.lastval('set_timer').seconds - (ReadHours*3600)) /60)
-                print("TYPE:" +  str(type(data.lastval('set_timer')))+ " ATTR:" + str(dir(data.lastval('set_timer'))) + "HOURS:" + str(ReadHours) +  " MINUTES:" +str(ReadMinutes) )                
+                # print("TYPE:" +  str(type(data.lastval('set_timer')))+ " ATTR:" + str(dir(data.lastval('set_timer'))) + "HOURS:" + str(ReadHours) +  " MINUTES:" +str(ReadMinutes) )                
                 self.set_timer.setTime(QTime(ReadHours,ReadMinutes,0))
             xlim = (time(0), max([time(0, 1, 0), data.lastval('time')]))
             # clear axes
